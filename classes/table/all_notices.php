@@ -104,7 +104,7 @@ class all_notices extends table_sql implements renderable {
      */
     public function query_db($pagesize, $useinitialsbar = true): void {
         $records = sitenotice::get_records([], 'enabled, timemodified', 'DESC', $this->pagesize * $this->page, $this->pagesize);
-        $total = count($records);
+        $total = sitenotice::count_records();
         $this->pagesize($pagesize, $total);
 
         foreach ($records as $record) {
