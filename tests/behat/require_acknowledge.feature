@@ -35,4 +35,4 @@ Feature: Users are forcibly logged out after closing a notice which requires ack
     Then I should see "not acknowledging this will log you out"
     And I click on "sitenotice-modal-ackcheckbox" "checkbox"
     And I click on "sitenotice-acceptbtn" "button"
-    Then I should see "You are logged in as Bilbo Baggins"
+    Then I should see "Acceptance test site"

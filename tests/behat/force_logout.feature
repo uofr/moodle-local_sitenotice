@@ -32,7 +32,7 @@ Feature: Users are forcibly logged out after closing a notice
     And I log in as "admin"
     Then I should see "closing this will log you out"
     And I click on "sitenotice-closebtn" "button"
-    Then I should see "You are logged in as Admin User"
+    Then I should see "Acceptance test site"
 
   @javascript
   Scenario: Users are logged out after dismissing an acknowledgement notice
@@ -67,10 +67,11 @@ Feature: Users are forcibly logged out after closing a notice
     Then I should see "Log in"
     And I log in as "bilbo"
     And I am on site homepage
-    Then I should see "You are logged in as Bilbo Baggins"
+    Then I should see "Acceptance test site"
     And I log out
     And I log in as "admin"
     Then I should see "closing this will log you out"
     And I click on "sitenotice-modal-ackcheckbox" "checkbox"
     And I click on "sitenotice-acceptbtn" "button"
-    Then I should see "You are logged in as Admin User"
+    Then I should see "Acceptance test site"
+
