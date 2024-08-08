@@ -6,8 +6,8 @@
  */
 
 define(
-    ['jquery', 'core/ajax', 'core/modal_factory', 'local_sitenotice/modal_notice'],
-    function ($, ajax, ModalFactory, ModalNotice) {
+    ['jquery', 'core/ajax', 'local_sitenotice/modal_notice'],
+    function ($, ajax, ModalNotice) {
 
         var notices = {};
         var modal;
@@ -39,8 +39,7 @@ define(
                 return;
             }
             if (typeof modal === 'undefined') {
-                ModalFactory.create({
-                    type: ModalNotice.TYPE,
+                ModalNotice.create({
                     title: nextnotice.title,
                     body: nextnotice.content,
                     large: true,

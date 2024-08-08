@@ -6,16 +6,15 @@
  */
 
 define(
-    ['jquery', 'core/modal_factory', 'core/str'],
-    function ($, ModalFactory, str) {
+    ['jquery', 'core/modal', 'core/str'],
+    function ($, Modal, str) {
         var preview = {};
 
         preview.init = function() {
             $('a.notice-preview').on('click', function(e) {
                 var clickedLink = $(e.currentTarget);
                 var content = clickedLink.attr('data-noticecontent');
-                ModalFactory.create({
-                    type: ModalFactory.types.CLOSE,
+                Modal.create({
                     title: str.get_string('notice:content', 'local_sitenotice'),
                     body: content,
                     large: true
