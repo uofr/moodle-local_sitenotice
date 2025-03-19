@@ -41,6 +41,8 @@ class sitenotice_test extends \advanced_testcase {
     /**
      * Test notice creation.
      *
+     * @covers \local_sitenotice\helper::create_new_notice
+     *
      * @dataProvider create_notices_provider
      * @param array $formdata Array of form data to create notices
      * @param bool $allowdeletion Whether or not to allow deletion of notices
@@ -84,6 +86,8 @@ class sitenotice_test extends \advanced_testcase {
     /**
      * Test set reset notice.
      *
+     * @covers \local_sitenotice\helper::reset_notice
+     *
      * @dataProvider generic_provider()
      * @param array $formdata Array of form data to create notices
      */
@@ -116,6 +120,9 @@ class sitenotice_test extends \advanced_testcase {
 
     /**
      * Test enable/disable notice.
+     *
+     * @covers \local_sitenotice\helper::enable_notice
+     * @covers \local_sitenotice\helper::disable_notice
      *
      * @dataProvider generic_provider()
      * @param array $formdata Array of form data to create notices
@@ -152,6 +159,10 @@ class sitenotice_test extends \advanced_testcase {
 
     /**
      * Test user notice interaction.
+     *
+     * @covers \local_sitenotice\helper::dismiss_notice
+     * @covers \local_sitenotice\helper::acknowledge_notice
+     * @covers \local_sitenotice\helper::reset_notice
      *
      * @dataProvider generic_provider()
      * @param array $formdata Data to test on.
@@ -226,6 +237,8 @@ class sitenotice_test extends \advanced_testcase {
     /**
      * Test user link interaction
      *
+     * @covers \local_sitenotice\helper::track_link
+     *
      * @dataProvider generic_provider()
      * @param array $formdata Data to test on.
      */
@@ -259,6 +272,8 @@ class sitenotice_test extends \advanced_testcase {
 
     /**
      * Test course completion option.
+     *
+     * @covers \local_sitenotice\helper::retrieve_user_notices
      */
     public function test_user_required_completion() {
         global $DB;
@@ -315,6 +330,8 @@ class sitenotice_test extends \advanced_testcase {
 
     /**
      * Test user see required notice after dismissing it.
+     *
+     * @covers \local_sitenotice\helper::retrieve_user_notices
      */
     public function test_retrieve_user_notices_when_dismissed_one_that_requires_acknowledgement() {
         $this->resetAfterTest();
@@ -342,6 +359,8 @@ class sitenotice_test extends \advanced_testcase {
 
     /**
      * Test user see required notice after dismissing, and then acknowledged it.
+     *
+     * @covers \local_sitenotice\helper::retrieve_user_notices
      */
     public function test_retrieve_user_notices_when_dismiss_and_then_acknowledged() {
         $this->resetAfterTest();
@@ -379,6 +398,8 @@ class sitenotice_test extends \advanced_testcase {
 
     /**
      * Test user see required notice when forcelogout logout.
+     *
+     * @covers \local_sitenotice\helper::retrieve_user_notices
      */
     public function test_retrieve_user_notices_when_force_logout() {
         global $USER;

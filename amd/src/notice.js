@@ -7,7 +7,7 @@
 
 define(
     ['jquery', 'core/ajax', 'local_sitenotice/modal_notice'],
-    function ($, ajax, ModalNotice) {
+    function($, ajax, ModalNotice) {
 
         var notices = {};
         var modal;
@@ -33,13 +33,14 @@ define(
         /**
          * Show next notice in the modal.
          */
-        var nextNotice = function () {
+        var nextNotice = function() {
             var nextnotice = getNotice();
             if (nextnotice == false) {
                 return;
             }
             if (typeof modal === 'undefined') {
                 ModalNotice.create({
+                    type: ModalNotice.TYPE,
                     title: nextnotice.title,
                     body: nextnotice.content,
                     large: true,
